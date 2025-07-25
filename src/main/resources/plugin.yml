@@ -1,7 +1,7 @@
 name: skript-citizens
-author: nylhus
+authors: [ nylhus, ShaneBee, LimeGlass ]
 description: Use Citizens api with Skript
 version: @version@
-api-version: '1.20'
+api-version: '1.21.5'
 main: ca.nylhus.skriptcitizens.SkriptCitizens
 depend: [Skript, Citizens]
