@@ -71,7 +71,7 @@ dependencies {
 
 	//GSON bundled with Minecraft, should be kept in sync
 	//https://hub.spigotmc.org/stash/projects/SPIGOT/repos/bukkit/browse/pom.xml
-    implementation (group: 'com.google.code.gson', name: 'gson', version: '2.10.1')
+    implementation (group: 'com.google.code.gson', name: 'gson', version: '2.13.1')
 
     // bStats
     shadow (group: 'org.bstats', name: 'bstats-bukkit', version: '3.0.2')
