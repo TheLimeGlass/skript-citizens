@@ -11,7 +11,7 @@ jobs:
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
       - name: checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
