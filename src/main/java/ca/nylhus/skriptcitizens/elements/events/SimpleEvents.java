@@ -2,8 +2,8 @@ package ca.nylhus.skriptcitizens.elements.events;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.lang.util.SimpleEvent;
+import org.skriptlang.skript.lang.converter.Converter;
 import ch.njol.skript.registrations.EventValues;
-import ch.njol.skript.util.Getter;
 import net.citizensnpcs.api.event.DespawnReason;
 import net.citizensnpcs.api.event.NPCClickEvent;
 import net.citizensnpcs.api.event.NPCCreateEvent;
@@ -65,44 +65,44 @@ public class SimpleEvents {
                 .since("1.0.0");
 
         // Event Values
-        EventValues.registerEventValue(NPCEvent.class, NPC.class, new Getter<NPC, NPCEvent>() {
+        EventValues.registerEventValue(NPCEvent.class, NPC.class, new Converter<NPCEvent, NPC>() {
             @Override
-            public @Nullable NPC get(NPCEvent event) {
+            public @Nullable NPC convert(NPCEvent event) {
                 return event.getNPC();
             }
         }, EventValues.TIME_NOW);
 
-        EventValues.registerEventValue(NPCClickEvent.class, Player.class, new Getter<Player, NPCClickEvent>() {
+        EventValues.registerEventValue(NPCClickEvent.class, Player.class, new Converter<NPCClickEvent, Player>() {
             @Override
-            public @Nullable Player get(NPCClickEvent event) {
+            public @Nullable Player convert(NPCClickEvent event) {
                 return event.getClicker();
             }
         }, EventValues.TIME_NOW);
 
-        EventValues.registerEventValue(NPCSelectEvent.class, CommandSender.class, new Getter<CommandSender, NPCSelectEvent>() {
+        EventValues.registerEventValue(NPCSelectEvent.class, CommandSender.class, new Converter<NPCSelectEvent, CommandSender>() {
             @Override
-            public @Nullable CommandSender get(NPCSelectEvent event) {
+            public @Nullable CommandSender convert(NPCSelectEvent event) {
                 return event.getSelector();
             }
         }, EventValues.TIME_NOW);
 
-        EventValues.registerEventValue(NPCDespawnEvent.class, DespawnReason.class, new Getter<DespawnReason, NPCDespawnEvent>() {
+        EventValues.registerEventValue(NPCDespawnEvent.class, DespawnReason.class, new Converter<NPCDespawnEvent, DespawnReason>() {
             @Override
-            public @Nullable DespawnReason get(NPCDespawnEvent event) {
+            public @Nullable DespawnReason convert(NPCDespawnEvent event) {
                 return event.getReason();
             }
         }, EventValues.TIME_NOW);
 
-        EventValues.registerEventValue(NPCSpawnEvent.class, Location.class, new Getter<Location, NPCSpawnEvent>() {
+        EventValues.registerEventValue(NPCSpawnEvent.class, Location.class, new Converter<NPCSpawnEvent, Location>() {
             @Override
-            public @Nullable Location get(NPCSpawnEvent event) {
+            public @Nullable Location convert(NPCSpawnEvent event) {
                 return event.getLocation();
             }
         }, EventValues.TIME_NOW);
 
-        EventValues.registerEventValue(NPCSpawnEvent.class, SpawnReason.class, new Getter<SpawnReason, NPCSpawnEvent>() {
+        EventValues.registerEventValue(NPCSpawnEvent.class, SpawnReason.class, new Converter<NPCSpawnEvent, SpawnReason>() {
             @Override
-            public @Nullable SpawnReason get(NPCSpawnEvent event) {
+            public @Nullable SpawnReason convert(NPCSpawnEvent event) {
                 return event.getReason();
             }
         }, EventValues.TIME_NOW);
